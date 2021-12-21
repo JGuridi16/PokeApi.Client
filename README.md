@@ -1,24 +1,21 @@
 # pokeapi-client
 
-## Project setup
+## Instalación de dependencias
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar en servidor de desarrollo
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Compilar y crear bundle para producción
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Organizar archivos
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

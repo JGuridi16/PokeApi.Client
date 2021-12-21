@@ -1,26 +1,28 @@
 import apiConfig from '@/core/config/apiConfig'
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import pokemonRoutes from "./pokemon.router";
+import PageNotFound from '@/views/common/PageNotFound.vue';
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: () => import('@/views/Home.vue')
   },
+  pokemonRoutes,
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  }
+    path: '*',
+    name: 'not-found',
+    component: PageNotFound,
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  base: apiConfig.BASE_URL,
+  base: process.env.BASE_URL,
   routes
 })
 
